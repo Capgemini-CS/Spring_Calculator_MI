@@ -1,5 +1,7 @@
 package com.capgemini.calculator.service;
 
+import com.capgemini.calculator.service.operation.AdditionService;
+import com.capgemini.calculator.service.operation.SubtractService;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,7 +17,7 @@ public class CalculatorService implements CalculatorInterface{
 
     @Override
     public void executeCalculation() {
-        System.out.println(additionService.executeOperation(8,2));
-        System.out.println(subtractService.executeOperation(6,3));
+        System.out.println(additionService.executeOperation(8,"+",2));
+        System.out.println(subtractService.executeOperation(6,"-",3));
     }
 }

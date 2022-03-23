@@ -1,7 +1,10 @@
 package com.capgemini.calculator.model;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
 
+@Component
 public class Operator {
 
     public Operator() {

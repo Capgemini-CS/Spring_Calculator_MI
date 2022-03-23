@@ -1,5 +1,7 @@
 package com.capgemini.calculator.service;
 
+import com.capgemini.calculator.exception.ExceptionWhenOperatorIsDifferent;
+
 public interface CalculatorInterface {
-    void executeCalculation();
+    int executeCalculation(int firstNumber, String operator, int secondNumber) throws ExceptionWhenOperatorIsDifferent;
 }

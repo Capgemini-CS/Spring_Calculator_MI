@@ -1,9 +1,11 @@
 package com.capgemini.calculator.model;
 
 import com.capgemini.calculator.exception.ExceptionWhenKeyIsInvalid;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class KeyboardKey {
 
     public KeyboardKey() {

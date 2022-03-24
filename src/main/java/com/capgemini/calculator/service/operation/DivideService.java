@@ -1,25 +1,27 @@
 package com.capgemini.calculator.service.operation;
 
 import com.capgemini.calculator.exception.ExceptionWhenOperatorIsDifferent;
-import com.capgemini.calculator.validation.IValidationNumber;
+import com.capgemini.calculator.exception.ExceptionWhenSecondNumberIs0;
 import org.springframework.stereotype.Service;
 import org.tinylog.Logger;
 
 @Service
-public class DivideService implements IOperation, IValidationNumber {
+public class DivideService implements IOperation {
 
     @Override
-    public int executeOperation(int firstNumber, String operator, int secondNumber) throws ExceptionWhenOperatorIsDifferent {
-        if(checkValidationNumber(secondNumber)){
-            Logger.warn("You can use only : /");
-            throw new ExceptionWhenOperatorIsDifferent("You can use only : /");
-        }
+    public int executeOperation(int firstNumber, int secondNumber) throws ExceptionWhenOperatorIsDifferent, ExceptionWhenSecondNumberIs0 {
+            if (checkValidationNumber(secondNumber)) {
+                Logger.error("You should check the second parameter");
+            }
         return firstNumber / secondNumber;
     }
 
-    @Override
-    public boolean checkValidationNumber(int number) {
-        Logger.error("Something went wrong");
-        return number == 0;
+    private boolean checkValidationNumber(int secondNumber) throws ExceptionWhenSecondNumberIs0 {
+        if(secondNumber == 0){
+            throw new ExceptionWhenSecondNumberIs0("The second number must be different from 0");
+        }
+        return true;
     }
+
+
 }

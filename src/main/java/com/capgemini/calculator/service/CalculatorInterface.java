@@ -1,7 +1,9 @@
 package com.capgemini.calculator.service;
 
+import com.capgemini.calculator.exception.ExceptionWhenKeyIsInvalid;
 import com.capgemini.calculator.exception.ExceptionWhenOperatorIsDifferent;
+import com.capgemini.calculator.exception.ExceptionWhenSecondNumberIs0;
 
 public interface CalculatorInterface {
-    int executeCalculation(int firstNumber, String operator, int secondNumber) throws ExceptionWhenOperatorIsDifferent;
+    void executeCalculation() throws ExceptionWhenOperatorIsDifferent, ExceptionWhenKeyIsInvalid, ExceptionWhenSecondNumberIs0;
 }

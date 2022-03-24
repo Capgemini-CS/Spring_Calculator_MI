@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class AdditionService implements IOperation{
 
     @Override
-    public int executeOperation(int firstNumber,String operator, int secondNumber) {
+    public int executeOperation(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }
 }

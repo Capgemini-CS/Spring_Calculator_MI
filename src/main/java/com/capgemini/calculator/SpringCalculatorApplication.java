@@ -1,6 +1,7 @@
 package com.capgemini.calculator;
 
-import com.capgemini.calculator.output.ShowOutput;
+import com.capgemini.calculator.output.Output;
+import com.capgemini.calculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +20,7 @@ public class SpringCalculatorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ShowOutput showOutput = context.getBean(ShowOutput.class);
-		showOutput.showResultOfEquation();
+		CalculatorService calculatorService = context.getBean(CalculatorService.class);
+		calculatorService.executeCalculation();
 	}
 }
